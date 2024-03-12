@@ -6,6 +6,7 @@ import model.entities.Department;
 import model.entities.Seller;
 
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 
 public class Progam {
@@ -29,6 +30,11 @@ public class Progam {
         for(Seller obj : list){
             System.out.println(obj);
         }
+
+        System.out.println("\n=== Test 4: seller insert===");
+        Seller newSeller = new Seller(null, "Greg", "greg@gmail.com", new Date(), 4000.00, department);
+        sellerDao.insert(newSeller);
+        System.out.println("Inserted! New id = " + newSeller.getId());
 
     }
 }
